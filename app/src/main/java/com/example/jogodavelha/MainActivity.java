@@ -3,6 +3,7 @@ package com.example.jogodavelha;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
         txtTwoPlayer = findViewById(R.id.txtTwoPlayer);
 
-        Intent intent = new Intent(MainActivity.this, TwoPlayerActivity.class);
-        startActivity(intent);
+        txtTwoPlayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, TwoPlayerActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
